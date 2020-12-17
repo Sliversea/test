@@ -1,0 +1,12 @@
+".\out\ACD.obj",
+".\out\ADC.obj",
+".\out\ADXL345.obj",
+".\out\AM2321.obj",
+".\out\CC1101.obj",
+".\out\crc.obj",
+".\out\main.obj",
+".\out\STC12C5A60S2_EEPROM.obj",
+".\out\GF3658.obj",
+".\out\SHT10.obj" 
+TO ".\out\Sub_Modbus" 
+PRINT(".\Sub_Modbus.m51") RAMSIZE(256) 

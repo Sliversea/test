@@ -1,0 +1,169 @@
+C51 COMPILER V9.00   AM2321                                                                10/22/2020 14:49:09 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE AM2321
+OBJECT MODULE PLACED IN .\out\AM2321.obj
+COMPILER INVOKED BY: C:\program\keil\C51\BIN\C51.EXE src\AM2321.c BROWSE DEBUG OBJECTEXTEND PRINT(.\AM2321.lst) OBJECT(.
+                    -\out\AM2321.obj)
+
+line level    source
+
+   1          #include "config.h"
+   2          #include "AM2321.h"
+   3          
+   4          
+   5          uchar xdata Sensor_Data[5]={0x00,0x00,0x00,0x00,0x00};
+   6          uchar Sensor_Check;               //校验和
+   7          uchar Sensor_AnswerFlag;  //收到起始标志位
+   8          uchar Sensor_ErrorFlag;   //读取传感器错误标志
+   9          uint  Sys_CNT;
+  10          
+  11          
+  12          void delay_3ms(void)   
+  13          {
+  14   1          unsigned char a,b;
+  15   1          for(b=194;b>0;b--)
+  16   1              for(a=84;a>0;a--);
+  17   1      }
+  18          void delay_30us(void)   
+  19          {
+  20   1          unsigned char a;
+  21   1          for(a=164;a>0;a--);
+  22   1      }
+  23          
+  24          void Clear_Data (void)
+  25            {
+  26   1              int i;
+  27   1              for(i=0;i<5;i++)
+  28   1              {
+  29   2                 Sensor_Data[i] = 0x00;
+  30   2               }//接收数据清零
+  31   1        }
+  32          
+  33          
+  34          /********************************************\
+  35          |* 功能： 读传感器发送的单个字节                *|
+  36          \********************************************/
+  37          unsigned char Read_SensorData(void)
+  38            {
+  39   1              unsigned char i,cnt;
+  40   1              unsigned char buffer,tmp;
+  41   1              buffer = 0;
+  42   1              for(i=0;i<8;i++)
+  43   1              {
+  44   2                      cnt=0;
+  45   2                      while(!Sensor_SDA)      //检测上次低电平是否结束
+  46   2                      {
+  47   3                        if(++cnt >= 290)
+  48   3                         {
+  49   4                                break;
+  50   4                         }
+  51   3                      }
+  52   2                      //延时Min=26us Max50us 跳过数据"0" 的高电平
+  53   2                      delay_30us(); 
+  54   2                      //delay_30us();
+C51 COMPILER V9.00   AM2321                                                                10/22/2020 14:49:09 PAGE 2   
+
+  55   2                      //判断传感器发送数据位
+  56   2                      tmp =0;
+  57   2                      if(Sensor_SDA)   
+  58   2                      {
+  59   3                        tmp = 1;
+  60   3                      }  
+  61   2                      cnt =0;
+  62   2                      while(Sensor_SDA)               //等待高电平 结束
+  63   2                      {
+  64   3                              if(++cnt >= 200)
+  65   3                              {
+  66   4                                break;
+  67   4                              }
+  68   3                      }
+  69   2                      buffer <<=1;
+  70   2                      buffer |= tmp;  
+  71   2              }
+  72   1              return buffer;
+  73   1        }
+  74          
+  75          /********************************************\
+  76          |* 功能： 读传感器                              *|
+  77          \********************************************/
+  78          unsigned char Read_Sensor(void)
+  79            {
+  80   1              unsigned char i;
+  81   1               //Sensor_SDA = 1;
+  82   1               //Delay_N1ms(100);  //延时2Ms
+  83   1              //主机拉低(Min=800US Max=20Ms) 
+  84   1          Sensor_SDA = 0;
+  85   1              
+  86   1              delay_3ms();  //延时2Ms
+  87   1              
+  88   1              //释放总线 延时(Min=30us Max=50us)
+  89   1              Sensor_SDA = 1; 
+  90   1              
+  91   1              delay_30us();
+  92   1              //Sensor_SDA = 1; 
+  93   1          //Delay_N10us(2);//延时30us   
+  94   1              Sensor_AnswerFlag = 0;  // 传感器响应标志        
+  95   1              //判断从机是否有低电平响应信号 如不响应则跳出，响应则向下运行
+  96   1          //Delay_N1ms(1);  //延时2Ms
+  97   1              
+  98   1               //Sensor_SCL = 0;
+  99   1              if(Sensor_SDA ==0)
+ 100   1              {  
+ 101   2                 
+ 102   2                 Sensor_AnswerFlag = 1;//收到起始信号
+ 103   2                 Sys_CNT = 0;
+ 104   2                 //判断从机是否发出 80us 的低电平响应信号是否结束      
+ 105   2                 while((!Sensor_SDA))
+ 106   2                 {
+ 107   3                   if(++Sys_CNT>300) //防止进入死循环
+ 108   3                       {
+ 109   4                         Sensor_ErrorFlag = 1;
+ 110   4                         return 0;
+ 111   4                        } 
+ 112   3                  }
+ 113   2                  Sys_CNT = 0;
+ 114   2                  //判断从机是否发出 80us 的高电平，如发出则进入数据接收状态
+ 115   2                  while((Sensor_SDA))
+ 116   2                  {
+C51 COMPILER V9.00   AM2321                                                                10/22/2020 14:49:09 PAGE 3   
+
+ 117   3                     if(++Sys_CNT>300) //防止进入死循环
+ 118   3                         {
+ 119   4                           Sensor_ErrorFlag = 1;
+ 120   4                           return 0;
+ 121   4                         } 
+ 122   3                  }            
+ 123   2                  // 数据接收 传感器共发送40位数据 
+ 124   2                  // 即5个字节 高位先送  5个字节分别为湿度高位 湿度低位 温度高位 温度低位 校验和
+ 125   2                  // 校验和为：湿度高位+湿度低位+温度高位+温度低位
+ 126   2                  for(i=0;i<5;i++)
+ 127   2                  {
+ 128   3                    Sensor_Data[i] = Read_SensorData();
+ 129   3                  }
+ 130   2                      Sensor_Check = Sensor_Data[0] + Sensor_Data[1] + Sensor_Data[2] + Sensor_Data[3];
+ 131   2                      if(Sensor_Check != Sensor_Data[4])
+ 132   2                      {
+ 133   3                          Clear_Data ();
+ 134   3                      }
+ 135   2                }
+ 136   1                else
+ 137   1                {
+ 138   2                  Sensor_AnswerFlag = 0;        // 未收到传感器响应   
+ 139   2                }
+ 140   1                return 1;
+ 141   1        }    
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    217    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =      5    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      5    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

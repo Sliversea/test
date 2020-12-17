@@ -1,0 +1,55 @@
+C51 COMPILER V9.00   ACD                                                                   10/22/2020 14:49:09 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE ACD
+OBJECT MODULE PLACED IN .\out\ACD.obj
+COMPILER INVOKED BY: C:\program\keil\C51\BIN\C51.EXE src\ACD.c BROWSE DEBUG OBJECTEXTEND PRINT(.\ACD.lst) OBJECT(.\out\A
+                    -CD.obj)
+
+line level    source
+
+   1          #include "config.h"
+   2          #include "adc.h"
+   3          
+   4          
+   5          //**********************************************************************
+   6          //函数名：adc10_start(uchar channel)
+   7          //输入  ：ADC转换的通道
+   8          //输出  ：ADC值
+   9          //功能描述：ADC转换
+  10          //**********************************************************************
+  11          uint    adc10_start(uchar channel)      //channel = 0~7
+  12          {
+  13   1              uint    adc;
+  14   1              uchar   i;
+  15   1      
+  16   1              ADC_RES = 0;
+  17   1              ADC_RESL = 0;
+  18   1      
+  19   1              ADC_CONTR = (ADC_CONTR & 0xe0) | ADC_START | channel; 
+  20   1              i = 250;
+  21   1              do{
+  22   2                      if(ADC_CONTR & ADC_FLAG)
+  23   2                      {
+  24   3                              ADC_CONTR &= ~ADC_FLAG;
+  25   3                              adc = (uint)ADC_RES;
+  26   3                              adc = (adc << 2) | (ADC_RESL & 3);
+  27   3                              return  adc;
+  28   3                      }
+  29   2              }while(--i);
+  30   1              return  1024;
+  31   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     58    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

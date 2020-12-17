@@ -1,0 +1,222 @@
+C51 COMPILER V9.00   STC12C5A60S2_EEPROM                                                   10/22/2020 14:49:10 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE STC12C5A60S2_EEPROM
+OBJECT MODULE PLACED IN .\out\STC12C5A60S2_EEPROM.obj
+COMPILER INVOKED BY: C:\program\keil\C51\BIN\C51.EXE src\STC12C5A60S2_EEPROM.c BROWSE DEBUG OBJECTEXTEND PRINT(.\STC12C5
+                    -A60S2_EEPROM.lst) OBJECT(.\out\STC12C5A60S2_EEPROM.obj)
+
+line level    source
+
+   1          /************************** ISP/IAP *****************************
+   2          ;STC12C/LE5201/PWM/AD   STC12C/LE5202/PWM/AD STC12C/LE5204/PWM/AD STC12C/LE5205/PWM/AD ÉÈÇø·ÖÅä£¬512×Ö½Ú/ÉÈÇ
+             -ø        (0000~03FF=1K)
+   3          ;SECTOR1        SECTOR2
+   4          ;0000~01FF      0200~03FF
+   5          
+   6          ; STC12C/LE5206PWM/AD ¿ÉÒÔÔÚÓ¦ÓÃ³ÌĞòĞŞ¸ÄÓ¦ÓÃ³ÌĞò¡£0000~17FFH,12¸öÉÈÇø
+   7          
+   8          ;STC12C/LE5A60S2/AD/PWM ÉÈÇø·ÖÅä£¬512×Ö½Ú/ÉÈÇø£¬´Ó0x0000¿ªÊ¼¡£
+   9          STC12C/LE5A08S2/AD/PWM   8K    16ÉÈÇø  0x0000~0x1FFF
+  10          STC12C/LE5A16S2/AD/PWM   8K    16ÉÈÇø  0x0000~0x1FFF
+  11          STC12C/LE5A20S2/AD/PWM   8K    16ÉÈÇø  0x0000~0x1FFF
+  12          STC12C/LE5A32S2/AD/PWM   28K   56ÉÈÇø  0x0000~0x6FFF
+  13          STC12C/LE5A40S2/AD/PWM   20K   40ÉÈÇø  0x0000~0x4FFF
+  14          STC12C/LE5A48S2/AD/PWM   12K   24ÉÈÇø  0x0000~0x2FFF
+  15          STC12C/LE5A52S2/AD/PWM   8K    16ÉÈÇø  0x0000~0x1FFF
+  16          STC12C/LE5A56S2/AD/PWM   4K     8ÉÈÇø  0x0000~0x0FFF
+  17          STC12C/LE5A60S2/AD/PWM   1K     2ÉÈÇø  0x0000~0x03FF
+  18          
+  19          ;STC1F/L01E/02E/04E/05E  ÉÈÇø·ÖÅä£¬512×Ö½Ú/ÉÈÇø (0000~03FF=1K)
+  20          ;SECTOR1        SECTOR2
+  21          ;0000~01FF      0200~03FF
+  22          
+  23          ;IAP11F/L06 ¿ÉÒÔÔÚÓ¦ÓÃ³ÌĞòĞŞ¸ÄÓ¦ÓÃ³ÌĞò¡£0000~17FFH,12¸öÉÈÇø6K
+  24          ;IAP11F/L62 ¿ÉÒÔÔÚÓ¦ÓÃ³ÌĞòĞŞ¸ÄÓ¦ÓÃ³ÌĞò¡£0000~17FFH,124¸öÉÈÇø62K
+  25          
+  26          STC11F/L01E    1K     2ÉÈÇø  0x0000~0x03FF
+  27          STC11F/L02E    1K     2ÉÈÇø  0x0000~0x03FF
+  28          STC11F/L03E    1K     2ÉÈÇø  0x0000~0x03FF
+  29          STC11F/L04E    1K     2ÉÈÇø  0x0000~0x03FF
+  30          STC11F/L05E    1K     2ÉÈÇø  0x0000~0x03FF
+  31          
+  32          STC11F/L08XE   8K    16ÉÈÇø  0x0000~0x1FFF
+  33          STC11F/L16XE   8K    16ÉÈÇø  0x0000~0x1FFF
+  34          STC11F/L20XE   8K    16ÉÈÇø  0x0000~0x1FFF
+  35          STC11F/L32XE  28K    56ÉÈÇø  0x0000~0x6FFF
+  36          STC11F/L40XE  20K    40ÉÈÇø  0x0000~0x4FFF
+  37          STC11F/L48XE  12K    24ÉÈÇø  0x0000~0x2FFF
+  38          STC11F/L52XE   8K    16ÉÈÇø  0x0000~0x1FFF
+  39          STC11F/L56XE   4K     8ÉÈÇø  0x0000~0x0FFF
+  40          STC11F/L60XE   1K     2ÉÈÇø  0x0000~0x03FF
+  41          
+  42          STC10F/L02XE   4K     8ÉÈÇø  0x0000~0x0FFF
+  43          STC10F/L04XE   4K     8ÉÈÇø  0x0000~0x0FFF
+  44          STC10F/L06XE   4K     8ÉÈÇø  0x0000~0x0FFF
+  45          STC10F/L08XE   4K     8ÉÈÇø  0x0000~0x0FFF
+  46          STC10F/L10XE   2K     4ÉÈÇø  0x0000~0x07FF
+  47          STC10F/L12XE   1K     2ÉÈÇø  0x0000~0x03FF
+  48          
+  49          ;IAP10F/L14X ¿ÉÒÔÔÚÓ¦ÓÃ³ÌĞòĞŞ¸ÄÓ¦ÓÃ³ÌĞò¡£0000~37FFH,28¸öÉÈÇø14K
+  50          
+  51          */
+  52          
+  53          #include "config.h"
+C51 COMPILER V9.00   STC12C5A60S2_EEPROM                                                   10/22/2020 14:49:10 PAGE 2   
+
+  54          #include "EEPROM.h"
+  55          sfr ISP_DATA  = 0xC2;
+  56          sfr ISP_ADDRH = 0xC3;
+  57          sfr ISP_ADDRL = 0xC4;
+  58          sfr ISP_CMD   = 0xC5;
+  59          sfr ISP_TRIG  = 0xC6;
+  60          sfr ISP_CONTR = 0xC7;
+  61          
+  62          //sfr ISP_CMD   = 0xC5;
+  63          #define         ISP_STANDBY()   ISP_CMD = 0             //ISP¿ÕÏĞÃüÁî£¨½ûÖ¹£©
+  64          #define         ISP_READ()              ISP_CMD = 1             //ISP¶Á³öÃüÁî
+  65          #define         ISP_WRITE()             ISP_CMD = 2             //ISPĞ´ÈëÃüÁî
+  66          #define         ISP_ERASE()             ISP_CMD = 3             //ISP²Á³ıÃüÁî
+  67          
+  68          //sfr ISP_TRIG  = 0xC6;
+  69          #define         ISP_TRIG()      ISP_TRIG = 0x5A,        ISP_TRIG = 0xA5         //ISP´¥·¢ÃüÁî
+  70          
+  71          //                                                        7    6    5      4    3    2    1     0    Reset Value
+  72          //sfr IAP_CONTR = 0xC7;         IAPEN SWBS SWRST CFAIL  -   WT2  WT1   WT0   0000,x000  //IAP Control Register
+  73          #define ISP_EN                  0x80
+  74          #define ISP_SWBS                0x40
+  75          #define ISP_SWRST               0x20
+  76          #define ISP_CMD_FAIL    0x10
+  77          #define ISP_WAIT_1MHZ   7
+  78          #define ISP_WAIT_2MHZ   6
+  79          #define ISP_WAIT_3MHZ   5
+  80          #define ISP_WAIT_6MHZ   4
+  81          #define ISP_WAIT_12MHZ  3
+  82          #define ISP_WAIT_20MHZ  2
+  83          #define ISP_WAIT_24MHZ  1
+  84          #define ISP_WAIT_30MHZ  0
+  85          
+  86          #define ISP_Fosc        MAIN_Fosc
+  87          #if (ISP_Fosc >= 24000000L)
+                      #define         ISP_WAIT_FREQUENCY      ISP_WAIT_30MHZ
+              #elif (ISP_Fosc >= 20000000L)
+                      #define         ISP_WAIT_FREQUENCY      ISP_WAIT_24MHZ
+              #elif (ISP_Fosc >= 12000000L)
+                      #define         ISP_WAIT_FREQUENCY      ISP_WAIT_20MHZ
+              #elif (ISP_Fosc >= 6000000L)
+  94                  #define         ISP_WAIT_FREQUENCY      ISP_WAIT_12MHZ
+  95          #elif (ISP_Fosc >= 3000000L)
+                      #define         ISP_WAIT_FREQUENCY      ISP_WAIT_6MHZ
+              #elif (ISP_Fosc >= 2000000L)
+                      #define         ISP_WAIT_FREQUENCY      ISP_WAIT_3MHZ
+              #elif (ISP_Fosc >= 1000000L)
+                      #define         ISP_WAIT_FREQUENCY      ISP_WAIT_2MHZ
+              #else
+                      #define         ISP_WAIT_FREQUENCY      ISP_WAIT_1MHZ
+              #endif
+ 104          
+ 105          #define         ISP_ENABLE()    ISP_CONTR = (ISP_EN + ISP_WAIT_FREQUENCY)
+ 106          #define         ISP_DISABLE()   ISP_CONTR = 0; ISP_CMD = 0; ISP_TRIG = 0; ISP_ADDRH = 0xff; ISP_ADDRL = 0xff
+ 107          
+ 108          /*********************************************************************/
+ 109          
+ 110          void DisableEEPROM(void)                //ÒÔÏÂÓï¾ä¿ÉÒÔ²»ÓÃ£¬Ö»ÊÇ³öÓÚ°²È«¿¼ÂÇ¶øÒÑ
+ 111          {
+ 112   1              ISP_CONTR = 0;                          //½ûÖ¹ISP/IAP²Ù×÷
+ 113   1              ISP_CMD   = 0;                          //È¥³ıISP/IAPÃüÁî
+ 114   1              ISP_TRIG  = 0;                          //·ÀÖ¹ISP/IAPÃüÁîÎó´¥·¢
+ 115   1              ISP_ADDRH = 0xff;                       //Ö¸Ïò·ÇEEPROMÇø£¬·ÀÖ¹Îó²Ù×÷
+C51 COMPILER V9.00   STC12C5A60S2_EEPROM                                                   10/22/2020 14:49:10 PAGE 3   
+
+ 116   1              ISP_ADDRL = 0xff;                       //Ö¸Ïò·ÇEEPROMÇø£¬·ÀÖ¹Îó²Ù×÷
+ 117   1      }
+ 118          
+ 119          
+ 120          /******************** ¶ÁN¸ö×Ö½Úº¯Êı ×î¶à255×Ö½ÚÒ»´Î *****************/
+ 121          void EEPROM_read_n(unsigned int EE_address,unsigned char *DataAddress,unsigned char lenth)
+ 122          {
+ 123   1              EA = 0;         //½ûÖ¹ÖĞ¶Ï
+ 124   1              ISP_ENABLE();                                   //ºêµ÷ÓÃ, ÉèÖÃµÈ´ıÊ±¼ä£¬ÔÊĞíISP/IAP²Ù×÷£¬ËÍÒ»´Î¾Í¹»
+ 125   1              ISP_READ();                                             //ºêµ÷ÓÃ, ËÍ×Ö½Ú¶ÁÃüÁî£¬ÃüÁî²»Ğè¸Ä±äÊ±£¬²»ĞèÖØĞÂËÍÃüÁî
+ 126   1              do
+ 127   1              {
+ 128   2                      ISP_ADDRH = EE_address / 256;           //ËÍµØÖ·¸ß×Ö½Ú£¨µØÖ·ĞèÒª¸Ä±äÊ±²ÅĞèÖØĞÂËÍµØÖ·£©
+ 129   2                      ISP_ADDRL = EE_address % 256;           //ËÍµØÖ·µÍ×Ö½Ú
+ 130   2                      ISP_TRIG();                                                     //ºêµ÷ÓÃ, ÏÈËÍ5AH£¬ÔÙËÍA5Hµ½ISP/IAP´¥·¢¼Ä´æÆ÷£¬Ã¿´Î¶¼ĞèÒªÈç´Ë
+ 131   2                      _nop_();
+ 132   2                      *DataAddress = ISP_DATA;                        //¶Á³öµÄÊı¾İËÍÍù
+ 133   2                      EE_address++;
+ 134   2                      DataAddress++;
+ 135   2              }while(--lenth);
+ 136   1      
+ 137   1              DisableEEPROM();
+ 138   1              EA = 1;         //ÖØĞÂÔÊĞíÖĞ¶Ï
+ 139   1      }
+ 140          
+ 141          /******************** ÉÈÇø²Á³ıº¯Êı *****************/
+ 142          void EEPROM_SectorErase(unsigned int EE_address)
+ 143          {
+ 144   1              EA = 0;         //½ûÖ¹ÖĞ¶Ï
+ 145   1                                                                                              //Ö»ÓĞÉÈÇø²Á³ı£¬Ã»ÓĞ×Ö½Ú²Á³ı£¬512×Ö½Ú/ÉÈÇø¡£
+ 146   1                                                                                              //ÉÈÇøÖĞÈÎÒâÒ»¸ö×Ö½ÚµØÖ·¶¼ÊÇÉÈÇøµØÖ·¡£
+ 147   1              ISP_ADDRH = EE_address / 256;                   //ËÍÉÈÇøµØÖ·¸ß×Ö½Ú£¨µØÖ·ĞèÒª¸Ä±äÊ±²ÅĞèÖØĞÂËÍµØÖ·£©
+ 148   1              ISP_ADDRL = EE_address % 256;                   //ËÍÉÈÇøµØÖ·µÍ×Ö½Ú
+ 149   1              ISP_ENABLE();                                                   //ÉèÖÃµÈ´ıÊ±¼ä£¬ÔÊĞíISP/IAP²Ù×÷£¬ËÍÒ»´Î¾Í¹»
+ 150   1              ISP_ERASE();                                                    //ºêµ÷ÓÃ, ËÍÉÈÇø²Á³ıÃüÁî£¬ÃüÁî²»Ğè¸Ä±äÊ±£¬²»ĞèÖØĞÂËÍÃüÁî
+ 151   1              ISP_TRIG();                                                             //ºêµ÷ÓÃ, ÏÈËÍ5AH£¬ÔÙËÍA5Hµ½ISP/IAP´¥·¢¼Ä´æÆ÷£¬Ã¿´Î¶¼ĞèÒªÈç´Ë
+ 152   1              DisableEEPROM();
+ 153   1              EA = 1;         //ÖØĞÂÔÊĞíÖĞ¶Ï
+ 154   1      }
+ 155          
+ 156          /******************** Ğ´N¸ö×Ö½Úº¯Êı ×î¶à255×Ö½ÚÒ»´Î *****************/
+ 157          void EEPROM_write_n(unsigned int EE_address,unsigned char *DataAddress,unsigned char lenth)
+ 158          {
+ 159   1              EA = 0;         //½ûÖ¹ÖĞ¶Ï
+ 160   1              ISP_ENABLE();                                                   //ÉèÖÃµÈ´ıÊ±¼ä£¬ÔÊĞíISP/IAP²Ù×÷£¬ËÍÒ»´Î¾Í¹»
+ 161   1              ISP_WRITE();                                                    //ºêµ÷ÓÃ, ËÍ×Ö½ÚĞ´ÃüÁî£¬ÃüÁî²»Ğè¸Ä±äÊ±£¬²»ĞèÖØĞÂËÍÃüÁî
+ 162   1              do
+ 163   1              {
+ 164   2                      ISP_ADDRH = EE_address / 256;           //ËÍµØÖ·¸ß×Ö½Ú£¨µØÖ·ĞèÒª¸Ä±äÊ±²ÅĞèÖØĞÂËÍµØÖ·£©
+ 165   2                      ISP_ADDRL = EE_address % 256;           //ËÍµØÖ·µÍ×Ö½Ú
+ 166   2                      ISP_DATA  = *DataAddress;                       //ËÍÊı¾İµ½ISP_DATA£¬Ö»ÓĞÊı¾İ¸Ä±äÊ±²ÅĞèÖØĞÂËÍ
+ 167   2                      ISP_TRIG();                                                     //ºêµ÷ÓÃ, ÏÈËÍ5AH£¬ÔÙËÍA5Hµ½ISP/IAP´¥·¢¼Ä´æÆ÷£¬Ã¿´Î¶¼ĞèÒªÈç´Ë
+ 168   2                      _nop_();
+ 169   2                      EE_address++;                                           //ÏÂÒ»¸öµØÖ·
+ 170   2                      DataAddress++;                                          //ÏÂÒ»¸öÊı¾İ
+ 171   2              }while(--lenth);                                                //Ö±µ½½áÊø
+ 172   1      
+ 173   1              DisableEEPROM();
+ 174   1              EA = 1;         //ÖØĞÂÔÊĞíÖĞ¶Ï
+ 175   1      }
+ 176          
+ 177          void EEPROM_write_byte(unsigned int EE_address,unsigned char *DataAddress, unsigned char lenth, unsigned c
+C51 COMPILER V9.00   STC12C5A60S2_EEPROM                                                   10/22/2020 14:49:10 PAGE 4   
+
+             -har num,unsigned char Data)
+ 178          {
+ 179   1           EEPROM_read_n(EE_address,DataAddress,lenth);
+ 180   1               DataAddress[num] = Data;
+ 181   1               EEPROM_SectorErase(EE_address);
+ 182   1           EEPROM_write_n(EE_address,DataAddress,lenth);
+ 183   1               
+ 184   1               
+ 185   1      }
+ 186          
+ 187          
+ 188          
+ 189          
+ 190          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    202    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      20
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

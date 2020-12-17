@@ -1,0 +1,175 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\wtu\Desktop\Modbus(´Ó»ú)-V20160421\Sub_Modbus.uvproj
+Project File Date:  10/13/2020
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling ACD.c...
+compiling ADC.c...
+compiling ADXL345.c...
+compiling AM2321.c...
+compiling CC1101.c...
+compiling crc.c...
+compiling main.c...
+SRC\MAIN.C(94): error C100: unprintable character 0xD0 skipped
+SRC\MAIN.C(94): error C100: unprintable character 0xB4 skipped
+SRC\MAIN.C(94): error C100: unprintable character 0xB5 skipped
+SRC\MAIN.C(94): error C100: unprintable character 0xD8 skipped
+SRC\MAIN.C(94): error C100: unprintable character 0xD6 skipped
+SRC\MAIN.C(94): error C100: unprintable character 0xB7 skipped
+SRC\MAIN.C(212): error C100: unprintable character 0xB4 skipped
+SRC\MAIN.C(212): error C100: unprintable character 0xD3 skipped
+SRC\MAIN.C(212): error C100: unprintable character 0xD6 skipped
+SRC\MAIN.C(212): error C100: unprintable character 0xF7 skipped
+SRC\MAIN.C(212): error C100: unprintable character 0xBB skipped
+SRC\MAIN.C(212): error C100: unprintable character 0xFA skipped
+SRC\MAIN.C(212): error C100: unprintable character 0xBD skipped
+SRC\MAIN.C(212): error C100: unprintable character 0xD3 skipped
+SRC\MAIN.C(212): error C100: unprintable character 0xCA skipped
+SRC\MAIN.C(212): error C100: unprintable character 0xD5 skipped
+SRC\MAIN.C(212): error C100: unprintable character 0xC3 skipped
+SRC\MAIN.C(212): error C100: unprintable character 0xFC skipped
+SRC\MAIN.C(212): error C100: unprintable character 0xC1 skipped
+SRC\MAIN.C(212): error C100: unprintable character 0xEE skipped
+compiling STC12C5A60S2_EEPROM.c...
+compiling GF3658.c...
+compiling SHT10.c...
+Target not created
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SETRXMODE?CC1101
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ZHUDONG?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIME0_INIT?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GF3658_DATA?GF3658
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GF3658_MAP?GF3658
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GF3658?GF3658
+Program Size: data=123.2 xdata=780 code=7961
+creating hex file from ".\out\Sub_Modbus"...
+".\out\Sub_Modbus" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling ACD.c...
+compiling ADXL345.c...
+compiling AM2321.c...
+compiling CC1101.c...
+compiling crc.c...
+compiling main.c...
+compiling STC12C5A60S2_EEPROM.c...
+compiling GF3658.c...
+compiling SHT10.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SETRXMODE?CC1101
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ZHUDONG?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIME0_INIT?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GF3658_DATA?GF3658
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GF3658_MAP?GF3658
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GF3658?GF3658
+Program Size: data=123.2 xdata=780 code=7961
+creating hex file from ".\out\Sub_Modbus"...
+".\out\Sub_Modbus" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SETRXMODE?CC1101
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ZHUDONG?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIME0_INIT?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GF3658_DATA?GF3658
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GF3658_MAP?GF3658
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GF3658?GF3658
+Program Size: data=123.2 xdata=780 code=7989
+creating hex file from ".\out\Sub_Modbus"...
+".\out\Sub_Modbus" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SETRXMODE?CC1101
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ZHUDONG?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIME0_INIT?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GF3658_DATA?GF3658
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GF3658_MAP?GF3658
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GF3658?GF3658
+Program Size: data=123.2 xdata=780 code=7995
+creating hex file from ".\out\Sub_Modbus"...
+".\out\Sub_Modbus" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SETRXMODE?CC1101
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ZHUDONG?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIME0_INIT?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GF3658_DATA?GF3658
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GF3658_MAP?GF3658
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GF3658?GF3658
+Program Size: data=123.2 xdata=780 code=7989
+creating hex file from ".\out\Sub_Modbus"...
+".\out\Sub_Modbus" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SETRXMODE?CC1101
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ZHUDONG?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIME0_INIT?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GF3658_DATA?GF3658
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GF3658_MAP?GF3658
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GF3658?GF3658
+Program Size: data=123.2 xdata=780 code=8041
+creating hex file from ".\out\Sub_Modbus"...
+".\out\Sub_Modbus" - 0 Error(s), 6 Warning(s).
+Build target 'Target 1'
+compiling main.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?SETRXMODE?CC1101
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?ZHUDONG?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?TIME0_INIT?MAIN
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GF3658_DATA?GF3658
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GF3658_MAP?GF3658
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?GF3658?GF3658
+Program Size: data=123.2 xdata=780 code=8041
+creating hex file from ".\out\Sub_Modbus"...
+".\out\Sub_Modbus" - 0 Error(s), 6 Warning(s).
